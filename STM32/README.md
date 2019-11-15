@@ -10,7 +10,7 @@ You can then check out the [official documentation](https://code.visualstudio.co
 
 After installing the text editor, you can go through a couple video tutorials to get used to it, and scroll around the settings section to customize the theme and other things.
 
-![vs_code_settings](./STM32/vscode_settings.png)
+![vs_code_settings](./vscode_settings.png)
 
 The two most interesting features of VSCode are
 * Intellisense: it allows autocompletion, helps looking up functions, variables and more. It's very helpful when writing and reading code.
