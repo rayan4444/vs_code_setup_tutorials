@@ -85,7 +85,7 @@ As you develop your application, you'll often want to change some of the chip's 
 
 If you've set up everything correctly in your ```PATH``` this should be super simple: press ```Ctrl + Shift +P``` to open the Command Palette and select Build to compile or Build and Flash to compile and upload to the Board.
 
-![8](./build.PNG)
+![8](./build.png)
 
 ### Step 5: Debug
 To go into debugging mode, click the debugging icon on the side bar and start a debugging session. The configuration for the debugging session is in ```./vscode/launch.json```
