@@ -51,7 +51,7 @@ and make sure you have the following on your path:
 * OpenOCD (optional)
 * nRF Command Line Tools
 
-![path](./vs_code_path.png)
+![path](./vs_code_path.PNG)
 
 ### Step 5: Configure your toolchain
 Now you need to tell the SDK where to look for the compiler. Go to the directory where you've unzipped the SDK, to ```components/toolchain/gcc```. If you're on Windows, you need to modify the ```Makefile.windows``` file, on Mac and Linux modify ```Makefile.posix```.
