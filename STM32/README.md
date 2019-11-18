@@ -10,7 +10,7 @@ You can then check out the [official documentation](https://code.visualstudio.co
 
 After installing the text editor, you can go through a couple video tutorials to get used to it, and scroll around the settings section to customize the theme and other things.
 
-![vs_code_settings](./vscode_settings.png)
+![vs_code_settings](./vscode_settings.PNG)
 
 The two most interesting features of VSCode are
 * Intellisense: it allows autocompletion, helps looking up functions, variables and more. It's very helpful when writing and reading code.
@@ -43,11 +43,11 @@ This is what you need to add to your ```PATH```
 * make
 > You don't need to include the .exe files, just the directory that contains them. Check out the picture to see how that looks on my PC.
 
-![1](./vs_code_path.png)
+![1](./vs_code_path.PNG)
 
-![2](./vs_code_path_2.png)
+![2](./vs_code_path_2.PNG)
 
-![3](./vs_code_path_3.png)
+![3](./vs_code_path_3.PNG)
 
 ## Your First project
 Now that you have everything setup, you can start your first project. You will need a board with an STM32 Chip on it.
@@ -55,23 +55,23 @@ Now that you have everything setup, you can start your first project. You will n
 ### Step1: Configure your board/chip with STM32 Cube MX
 To keep things simple in the photos, I'll go through the STM32 Cube MX setup for a Nucleo board using the STM32F303RE Chip.
 
-![1](./cube_setup1.png)
+![1](./cube_setup1.PNG)
 
-![2](./cube_setup2.png)
+![2](./cube_setup2.PNG)
 
-![3](./cube_setup3.png)
+![3](./cube_setup3.PNG)
 
-![4](./cube_setup4.png)
+![4](./cube_setup4.PNG)
 The file location where you save the project will be the folder we'll later open in VSCode.
 After you've clicked "Generate code", CubeMX will download firmware relevant to the chip you selected and create a bunch of other files/presets. It will also automatically generate a Makefile that we can later use to compile the project. This is what the project directory will look like after you generate the code:
 
-![5](./files.png)
+![5](./files.PNG)
 
 ### Step2: Open the project folder in VSCode
 
 In a new VSCode Window, go to: ```File > Open Folder > select the folder your project is saved in```. It should look like this:
 
-![6](./project.png)
+![6](./project.PNG)
 
 ### Step 3: Edit the project
 
@@ -79,18 +79,18 @@ As you develop your application, you'll often want to change some of the chip's 
 
 >if you don't it will just get deleted when you regenerate code with CubeMX.
 
-![7](./usercode.png)
+![7](./usercode.PNG)
 
 ### Step 4: Build and Flash
 
 If you've set up everything correctly in your ```PATH``` this should be super simple: press ```Ctrl + Shift +P``` to open the Command Palette and select Build to compile or Build and Flash to compile and upload to the Board.
 
-![8](./build.png)
+![8](./build.PNG)
 
 ### Step 5: Debug
 To go into debugging mode, click the debugging icon on the side bar and start a debugging session. The configuration for the debugging session is in ```./vscode/launch.json```
 It will change depending on your debugging setup (ex: which programmer you are using), but it should look something like this:
 
-![9](./debug.png)
+![9](./debug.PNG)
 
 Depending on your application, you can select which variables to watch and where to put breakpoints, etc. for debugging.
