@@ -87,13 +87,13 @@ Edit this file to include the paths of the libraries and header files the compil
                 "${workspaceFolder}/**",
                 "${nrfSDK}/components/**",
                 "${nrfSDK}/components",
-                "${nrfSDK}/components/libraries/experimental_memobj",
+                "${nrfSDK}/components/libraries/memobj",
                 "${nrfSDK}/components/libraries/experimental_section_vars",
                 "${nrfSDK}/modules/nrfx/mdk",
                 "${nrfSDK}/modules/nrfx/hal",
                 "${nrfSDK}/components/libraries/balloc",
-                "${nrfSDK}/components/libraries/experimental_log",
-                "${nrfSDK}/components/libraries/experimental_log/src",
+                "${nrfSDK}/components/libraries/log",
+                "${nrfSDK}/components/libraries/log/src",
                 "${nrfSDK}/components/libraries/delay",
                 "${nrfSDK}/integration/nrfx",
                 "${nrfSDK}/components/libraries/bsp",
@@ -133,10 +133,21 @@ To build the project I just run:
 ```
 make
 ```
-and to flash it, just run:
+To erase the flash on the chip run:
+```
+make erase
+```
+To flash the Softdevice (Nordic firmware that deals with a lot of your bluetooth connectivity stuff)
+```
+make flash_softdevice
+```
+and to flash your user firmware, run:
  ```
  make flash
  ```
+> Note: make sure Softdevice is running on your chip before you flash your user firmware. Once you've flashed
+Softdevice on the chip, you don't need to do it again (as long as you don't erase the flash): you can keep flashing user code and changes will get implemented.
+
 You could take this a step further and define "Build" and "Flash" tasks in your VS Code environment:
 * there is an example [here](https://github.com/gera-k/VSC-Nordic-example/blob/master/ble_app_blinky/pca10040/s132/armgcc/.vscode/tasks.json)
 * or you can follow the microsoft tutorial [here](https://code.visualstudio.com/docs/editor/tasks#vscode)
@@ -152,17 +163,14 @@ toggling the LEDs by writing "01" or "00" to the "Nordic Blinky LED" characteris
 
 ## Debugging NRF52 with VS Code
 
-Follow this [tutorial]() to setup cortex-debug to Debug.
+Follow this [tutorial](https://electronut.in/visual-studio-code-nrf52-dev/) to setup cortex-debug to Debug.
+
+* To start a debugging session, go to the debug tab on VS Code and press play (top left).
+* The debugger will pause and show "Resetting target" on the debug console: to continue just press **F5** or the play/pause button on the debug control tab.
+* To stop the session press the stop button or **Shift+ F5**
 
 Notes:
-* Add the path to your Jlink exe to your path or to your vscode settings: in Settings.json
+* If you have issues getting the debugger to work, try adding the path to your Jlink exe to your ``PATH`` environment variable or to your vscode settings: in *settings.json*
 ```
 "cortex-debug.JLinkGDBServerPath": "C:\\Program Files (x86)\\SEGGER\\JLink\\JLinkGDBServerCL.exe",
-```
-* I have yet to solve the following error when running the debugger with the dev board
-```
-Reading symbols from C:\Users\rarma\Documents\NRF5_SDK\examples\ble_peripheral\ble_app_blinky\pca10040\s132\armgcc\_build\nrf52832_xxaa.out...
-0x00018808 in ?? ()
-Not implemented stop reason (assuming exception): undefined
-Resetting target
 ```
