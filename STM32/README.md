@@ -94,3 +94,8 @@ It will change depending on your debugging setup (ex: which programmer you are u
 ![9](./debug.PNG)
 
 Depending on your application, you can select which variables to watch and where to put breakpoints, etc. for debugging.
+
+## Tutorials to get you started
+Here are some references I found useful:
+* Implementing basic peripherals on STM32F0 using STM's HAL library (GPIO, external interrupts, ADC, timers, PWM, UART, I2C). It comes with a video and written explanations for each topic [[click here]](https://letanphuc.net/)
+* TBC
