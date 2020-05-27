@@ -174,3 +174,7 @@ Notes:
 ```
 "cortex-debug.JLinkGDBServerPath": "C:\\Program Files (x86)\\SEGGER\\JLink\\JLinkGDBServerCL.exe",
 ```
+## Reference projects to get started with NRF52 SDK (Aside from the SDK examples)
+
+* Michael Moon's Sunrise lamp: https://github.com/triffid/SunriseLight
+* Bluey BLE from Electronut (feat. libraries for several common sensors): https://github.com/electronut/ElectronutLabs-bluey/tree/master/code

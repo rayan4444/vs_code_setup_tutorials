@@ -72,6 +72,7 @@ After you've clicked "Generate code", CubeMX will download firmware relevant to 
 In a new VSCode Window, go to: ```File > Open Folder > select the folder your project is saved in```. It should look like this:
 
 ![6](./project.PNG)
+If you don't see the auto-generated .vscode folder in your working directory, Use cmd/ctrl+shift+p to open the show all commands panel and issue the command: Build STM32 project.
 
 ### Step 3: Edit the project
 
