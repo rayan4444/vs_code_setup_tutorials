@@ -36,7 +36,7 @@ You will need:
 * [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads): Toolchain for ARM Cortex-M and Cortex-R chips (what you need to compile for these Chips - GCC is included)
 * [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm) to make things.
 
-A nice to have but would be:
+A nice to have (but highly recommended) would be:
 * [OpenOCD](https://gnutoolchains.com/arm-eabi/openocd/) : OpenOCD is an open-source tool that allows debugging various ARM devices with GDB using a wide variety of JTAG programmers.
 
 ### Step 4: Add all of this to your PATH environment variable
@@ -55,7 +55,7 @@ and make sure you have the following on your path:
 
 ### Step 5: Configure your toolchain
 Now you need to tell the SDK where to look for the compiler. Go to the directory where you've unzipped the SDK, to ```components/toolchain/gcc```. If you're on Windows, you need to modify the ```Makefile.windows``` file, on Mac and Linux modify ```Makefile.posix```.
-Here is what I've modified the file on my Windows machine:
+Here is what I've modified the file on my Windows machine (**NOTE: paths use forward slashes**):
 
 ```
 GNU_INSTALL_ROOT := C:/Program Files (x86)/GNU Tools Arm Embedded/9 2019-q4-major/bin/
@@ -69,7 +69,7 @@ GNU_PREFIX := arm-none-eabi
 The last setup step is to configure VS Code to get all of what we've installed working correctly. If you are building a project from scratch, you should be doing this from the directory your ```main.c``` file will be in.
 I'm going to load up one of the many examples that's in the SDK instead: in VS Code go to``` File>Open Folder ```, navigate to the nRF SDK directory,  find ```examples/peripheral/ble_app_blinky```.
 
-When the folder opens in VS Code, open the ```main.c``` file. You'll notice that all the #include have blue squiggles underneath: that means your Intellisense engine cannot doesn't know where to look for the header files that you are including.  
+When the folder opens in VS Code, open the ```main.c``` file. You'll notice that all the ```#include``` have blue squiggles underneath: that means your Intellisense engine doesn't know where to look for the header files that you are including.
 
 To fix this press ```Ctrl + Shit + P ```, and look for ```c/cpp: edit configurations```: this should automatically create a ```c_cpp_properties.json``` file in a .vscode directory in your project folder.
 
